@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class GlafView: UIViewController {
+class graphaView: UIViewController {
     
     @IBOutlet var webview : UIWebView? = nil
     
