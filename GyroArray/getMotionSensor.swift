@@ -61,7 +61,8 @@ class AllMotionSensor : NSObject{
     var gyroData = dataGyro()
     var gyromotionstopflag : Bool!
     //httpのセット
-    var SendHTTP = HTTPControl(tryURL: "http://team-awake.rd.dendai.ac.jp/static_pages/about/",ToRequestMethod: "GET" )
+    var SendHTTP = HTTPControl(tryURL: "https://awake-test.herokuapp.com/sdata/datapost/",ToRequestMethod: "GET" )
+    //var SendHTTP = HTTPControl(tryURL: "http://team-awake.rd.dendai.ac.jp/static_pages/about/",ToRequestMethod: "GET" )
     //var count : Int = 0
     
     //加速度系

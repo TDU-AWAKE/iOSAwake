@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WAI-yc-IfS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,57 +13,501 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ape-EI-3Hf">
-                                <rect key="frame" x="29" y="20" width="228" height="128"/>
-                                <state key="normal" title="測定開始">
+                                <rect key="frame" x="127" y="551" width="120" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="[ 測定終了 ]">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="StartbuttonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cuF-Rh-Wsc"/>
+                                    <segue destination="cT5-TA-sDI" kind="show" id="HaW-Ba-Bez"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCi-Kw-tOE">
-                                <rect key="frame" x="29" y="327" width="228" height="46"/>
-                                <state key="normal" title="保存">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="put" destination="BYZ-38-t0r" eventType="touchUpInside" id="hnP-nW-WRj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PE-e0-TwJ">
-                                <rect key="frame" x="29" y="404" width="228" height="46"/>
-                                <state key="normal" title="読み込み">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="display" destination="BYZ-38-t0r" eventType="touchUpInside" id="wqr-Hy-sdP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ql5-c6-hTX">
-                                <rect key="frame" x="29" y="156" width="228" height="63"/>
-                                <state key="normal" title="StopGyro">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="StopbuttonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QIn-3P-ffV"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Awake" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kL-Wy-Lva">
+                                <rect key="frame" x="152" y="20" width="71" height="21"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="qvC-Qv-nLE">
+                                <rect key="frame" x="11" y="-29" width="353" height="627"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Awakeは、あなたの" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRK-ps-KVg">
+                                <rect key="frame" x="63" y="172" width="420" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="よりよい快適な睡眠を応援します" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMU-rB-DSL">
+                                <rect key="frame" x="89" y="214" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="ReadDataButton" destination="2PE-e0-TwJ" id="sQP-Te-Jd9"/>
-                        <outlet property="SaveDataButton" destination="gCi-Kw-tOE" id="HTb-Vl-IfA"/>
                         <outlet property="StartButton" destination="ape-EI-3Hf" id="lUT-3s-6Zx"/>
-                        <outlet property="StopGyro" destination="ql5-c6-hTX" id="oHi-c0-pTv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1220.5" y="2764.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Osc-FT-lyV">
+            <objects>
+                <viewController id="cT5-TA-sDI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yJC-84-Caq"/>
+                        <viewControllerLayoutGuide type="bottom" id="RYh-yE-fVB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S1F-7i-3e2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OpF-5F-YFC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="678"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="cT5-TA-sDI" id="reB-4x-9b8"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eRJ-8U-qCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1220.5" y="3553.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="evy-JD-lNs">
+            <objects>
+                <viewController id="WAI-yc-IfS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5FR-jJ-10t"/>
+                        <viewControllerLayoutGuide type="bottom" id="sYv-cV-obs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l3h-ia-Cci">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWW-oz-9I3">
+                                <rect key="frame" x="139" y="28" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Welcome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZj-yT-Nyi">
+                                <rect key="frame" x="97" y="103" width="127" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZg-hy-RFe">
+                                <rect key="frame" x="144" y="531" width="87" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="[ Web ]">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="N45-9i-QCO" kind="show" id="Lrg-gd-w6l"/>
+                                </connections>
+                            </button>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4PG-f7-euo">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem tag="1" title="Home" image="Bed-32.png" id="oQi-Ny-PRy"/>
+                                    <tabBarItem tag="1" title="twitter" image="Twitter-25.png" selectedImage="Twitter-25.png" id="4Az-ek-SUa"/>
+                                </items>
+                            </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Awake" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wwa-mT-DFm">
+                                <rect key="frame" x="152" y="13" width="71" height="21"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="welcome!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVj-2o-ZWF">
+                                <rect key="frame" x="105" y="61" width="165" height="63"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="36"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yX-hv-7rP">
+                                <rect key="frame" x="254" y="628" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="WIn-On-umX" kind="show" id="tBX-ky-Ott"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x75-qq-kyW">
+                                <rect key="frame" x="143" y="472" width="88" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="[ Timer ]">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="J6h-mI-UST" kind="show" id="gVl-SF-7w1"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Clock-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="XqV-Zo-3kp">
+                                <rect key="frame" x="108" y="472" width="31" height="30"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bullish-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="hAs-wL-7KU">
+                                <rect key="frame" x="108" y="531" width="30" height="30"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="cWH-ST-JL8">
+                                <rect key="frame" x="11" y="-24" width="353" height="627"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="x75-qq-kyW" secondAttribute="centerX" id="Ztc-iq-UbO"/>
+                            <constraint firstAttribute="centerX" secondItem="wZg-hy-RFe" secondAttribute="centerX" id="abI-bE-LUv"/>
+                            <constraint firstAttribute="centerX" secondItem="RZj-yT-Nyi" secondAttribute="centerX" id="nDx-dO-VyA"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERE-mo-nyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="907.5" y="292.5"/>
+        </scene>
+        <!--View Controller12-->
+        <scene sceneID="59V-5Q-ahx">
+            <objects>
+                <viewController id="WIn-On-umX" customClass="ViewController12" customModule="GyroArray" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AHW-Sq-5ob"/>
+                        <viewControllerLayoutGuide type="bottom" id="CjO-pL-0Jk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pvg-nO-aH8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Awake" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmo-Lq-e2n">
+                                <rect key="frame" x="152" y="20" width="71" height="21"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fyt-wx-JHi">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem tag="1" title="Home" image="Bed-32.png" id="sMu-Wl-L4Q"/>
+                                    <tabBarItem tag="1" title="twitter" image="Twitter-25.png" id="ig8-yQ-ckO"/>
+                                </items>
+                            </tabBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psN-7p-v7G">
+                                <rect key="frame" x="70" y="628" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="WAI-yc-IfS" kind="show" id="QOJ-h9-qr7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hx9-Gc-QbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1480.5" y="28.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ccq-gd-znL">
+            <objects>
+                <viewController id="N45-9i-QCO" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uyz-qp-qdB"/>
+                        <viewControllerLayoutGuide type="bottom" id="zdf-Ic-3i9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eU3-Q3-hu8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="irT-o9-HvM">
+                                <rect key="frame" x="0.0" y="0.0" width="380" height="726"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Okv-B2-Tjd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="525.5" y="1105.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3OL-Uq-usF">
+            <objects>
+                <viewController id="J6h-mI-UST" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A1r-io-Gpr"/>
+                        <viewControllerLayoutGuide type="bottom" id="D0u-fR-Xhd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fLS-HW-Y3h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="nxg-9J-IJ9">
+                                <rect key="frame" x="168" y="586" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="4od-FX-rkL" kind="show" id="sfv-ep-CQY"/>
+                                </connections>
+                            </pageControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Awake" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZE-2C-tvl">
+                                <rect key="frame" x="152" y="20" width="71" height="21"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeb-Pa-bi2">
+                                <rect key="frame" x="128" y="535" width="119" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="[ Timer Set ]">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hAK-wQ-kX9" kind="show" id="VNv-PG-2NU"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="9TJ-kf-tcB">
+                                <rect key="frame" x="11" y="-35" width="353" height="627"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="qeb-Pa-bi2" secondAttribute="centerX" id="0UI-GA-1gB"/>
+                            <constraint firstAttribute="centerX" secondItem="qeb-Pa-bi2" secondAttribute="centerX" id="9AX-V6-zGn"/>
+                            <constraint firstAttribute="centerX" secondItem="nxg-9J-IJ9" secondAttribute="centerX" id="pQd-Wn-00y"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g1r-Lw-3AI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1220.5" y="1105.5"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="D9Y-Aq-ijD">
+            <objects>
+                <viewController id="hAK-wQ-kX9" customClass="ViewController2" customModule="GyroArray" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dkf-Kh-dZp"/>
+                        <viewControllerLayoutGuide type="bottom" id="ajw-Yr-Slg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bsx-oH-URh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7U5-oZ-aJG">
+                                <rect key="frame" x="158" y="572" width="59" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="[ Next ]">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="2n1-Jj-OSQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Awake" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AQ-jn-B3P">
+                                <rect key="frame" x="152" y="20" width="71" height="21"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="UZT-3q-ZX1">
+                                <rect key="frame" x="11" y="-53" width="353" height="627"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="7U5-oZ-aJG" secondAttribute="centerX" id="OHD-DD-pV1"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kgh-jl-MpK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1220.5" y="1892.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BVO-C2-h4h">
+            <objects>
+                <viewController id="3W9-Xa-YCV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R7d-iI-8Yu"/>
+                        <viewControllerLayoutGuide type="bottom" id="x9b-dO-tKB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QtE-Xk-gci">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vJZ-V3-QA0">
+                                <rect key="frame" x="168" y="596" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="J6h-mI-UST" kind="show" id="1jL-WI-YFM"/>
+                                </connections>
+                            </pageControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="hot-milk.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0M0-UG-OBJ">
+                                <rect key="frame" x="48" y="58" width="285" height="147"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Awake" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uQ-lr-Prk">
+                                <rect key="frame" x="152" y="20" width="71" height="21"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;快適な睡眠の秘訣２&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zl-W2-HXh">
+                                <rect key="frame" x="43" y="235" width="174" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9wD-54-4fm">
+                                <rect key="frame" x="51" y="273" width="279" height="221"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">快適な睡眠を促すには、就寝は、夕食後３時間以上たつ必要があります。３時間以内の睡眠はできるだけ避けましょう。また、夜食を行なった場合、睡眠のパフォーマンスは落ちてしまいます。しかしながら、空腹状態を維持したまま、睡眠に入ると、身体的ストレスがかかる場合があります。その場合は、ホットミルクや、レモンティーといった胃腸にやさしい飲み物を飲みましょう。また、カフェインが入った飲み物などは覚醒状態を長時間維持させるため、コーヒなどは控えることにしましょう</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="0M0-UG-OBJ" secondAttribute="centerX" id="rW1-3G-hIE"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yQa-jO-TBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879.5" y="1631.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jbR-Ta-rcW">
+            <objects>
+                <viewController id="4od-FX-rkL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A4l-3z-zRW"/>
+                        <viewControllerLayoutGuide type="bottom" id="4xP-Nv-LeT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mYa-GJ-xTP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="female-jogger-silhouette-fog-sunset-run-bay-area-sky.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vbX-lr-npU">
+                                <rect key="frame" x="26" y="58" width="314" height="180"/>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="rxE-cU-rTm">
+                                <rect key="frame" x="168" y="596" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="3W9-Xa-YCV" kind="show" id="3d3-rU-Nqz"/>
+                                </connections>
+                            </pageControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Awake" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgC-Ws-HfQ">
+                                <rect key="frame" x="152" y="20" width="71" height="21"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;快適な睡眠の秘訣１&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cA7-qq-9oF">
+                                <rect key="frame" x="26" y="278" width="174" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="私たちTeam Awakeは、よりよい睡眠をとるためには、適度な運動を行うことを推奨します。特に、就寝時間の１時間以上前に入浴をし、ストレッチなど軽めの運動をすることにより、睡眠の質はかなり上昇します。" translatesAutoresizingMaskIntoConstraints="NO" id="14w-hP-6KY">
+                                <rect key="frame" x="58" y="313" width="250" height="225"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BWv-Eq-muW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879.5" y="823.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="YgH-kH-Bp8">
+            <objects>
+                <viewController id="JWq-bX-MPS" customClass="ViewController" customModule="GyroArray" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A4b-Xj-lZn"/>
+                        <viewControllerLayoutGuide type="bottom" id="7iD-cv-4uG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aaL-V7-6m4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Di6-ir-HNp">
+                                <rect key="frame" x="114" y="447" width="93" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="[ 保存 ]">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="put" destination="JWq-bX-MPS" eventType="touchUpInside" id="anc-Nt-H2H"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Awake" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsV-a4-jP4">
+                                <rect key="frame" x="125" y="20" width="71" height="21"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="vmZ-sb-1gr">
+                                <rect key="frame" x="0.0" y="-79" width="327" height="627"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="SaveDataButton" destination="Di6-ir-HNp" id="ZKE-Cn-URb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cRb-ku-tlb" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="720" y="3015"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Bed-32.png" width="32" height="32"/>
+        <image name="Bullish-50.png" width="50" height="50"/>
+        <image name="Clock-50.png" width="50" height="50"/>
+        <image name="Twitter-25.png" width="25" height="25"/>
+        <image name="female-jogger-silhouette-fog-sunset-run-bay-area-sky.jpg" width="750" height="500"/>
+        <image name="hot-milk.jpg" width="4752" height="3168"/>
+        <image name="rogo.png" width="3000" height="3000"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gVl-SF-7w1"/>
+    </inferredMetricsTieBreakers>
 </document>
