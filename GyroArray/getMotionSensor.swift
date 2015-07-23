@@ -61,7 +61,7 @@ class AllMotionSensor : NSObject{
     var gyroData = dataGyro()
     var gyromotionstopflag : Bool!
     //httpのセット
-    var SendHTTP = HTTPControl(tryURL: "http://team-awake.rd.dendai.ac.jp/static_pages/about/",ToRequestMethod: "GET" )
+    var SendHTTP = HTTPControl(tryURL: "https://awake-test.herokuapp.com/sdata/datapost/",ToRequestMethod: "GET" )
     //var count : Int = 0
     
     //加速度系
@@ -173,7 +173,7 @@ class AllMotionSensor : NSObject{
                     self.AcceleData.Amount = self.AcceleAmountCalculator()
                     
                     //個々の値を変える
-                    self.SendHTTP.makeDataHTTP(self.User_ID, dataID: 1, data: self.AcceleData.Amount)
+                    self.SendHTTP.makeDataHTTP(self.AcceleData.Amount)
                     self.SendHTTP.HTTPCheck()
                     
                     self.AcceleArray.append(self.AcceleData)
@@ -184,6 +184,7 @@ class AllMotionSensor : NSObject{
             })
             if(myMotionManager.accelerometerActive){
                 println("加速度センサーの取得を停止")
+                self.SendHTTP.SaveUUID()
                 myDevice.proximityMonitoringEnabled = false
                 myMotionManager.stopAccelerometerUpdates()
             }else{

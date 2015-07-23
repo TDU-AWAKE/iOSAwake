@@ -18,6 +18,14 @@ class ViewController: UIViewController{
     var savegyroArray = [dataGyro]()
     var Dataday : String?   //同
     var Datadays = [String]()
+    var count = 0
+    
+    //時間計測用の変数.
+    var cnt : Float = 0
+    
+    //時間表示用のラベル.
+    var myLabel : UILabel!
+
     
 //保存キー系
     //Gyro
@@ -41,11 +49,20 @@ class ViewController: UIViewController{
     let DAZ_Format = " DAZ"
     let AcceleAoC_Format = " AcceleAmountofchange"
     
+
     @IBOutlet weak var StartButton: UIButton!
+    @IBOutlet weak var Label: UILabel!
     @IBAction func StartbuttonPushed(sender:AnyObject){
+        /*
+        if(count==0){
+            Label.text="測定を終了"
+        }
+        count++
         gyroArray = CatchSensor.getGyromotion()
+        */
         acceleArray = CatchSensor.getAccelemotion()
     }
+   
     
     @IBOutlet weak var StopGyro: UIButton!
     @IBAction func StopbuttonPushed(sender:AnyObject){
@@ -101,8 +118,10 @@ class ViewController: UIViewController{
     
     }
     
-    @IBOutlet weak var SaveDataButton: UIButton!
+  
+    @IBOutlet weak var Savebutton: UIButton!
     @IBAction func put() {
+    /*
         //Gyro系
         var DatadGx = [Float]() //データを書き込むための配列・取り出すための配列
         var DatadGy = [Float]() //同
@@ -231,7 +250,7 @@ class ViewController: UIViewController{
         //println("配列の初期化")
         ud2.synchronize()
         //println("保存完了")
-    
+    */
     }
     
     @IBAction func delete() {
@@ -242,6 +261,31 @@ class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        myLabel = UILabel(frame: CGRectMake(0,0,200,50))
+        myLabel.backgroundColor = UIColor.blackColor()
+        myLabel.layer.masksToBounds = true
+        myLabel.layer.cornerRadius = 20.0
+        myLabel.text = "Time:\(cnt)"
+        myLabel.textColor = UIColor.whiteColor()
+        myLabel.shadowColor = UIColor.grayColor()
+        myLabel.textAlignment = NSTextAlignment.Center
+        myLabel.layer.position = CGPoint(x: self.view.bounds.width/2,y: 200)
+        self.view.addSubview(myLabel)
+        
+        //タイマーを作る.
+        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "onUpdate:", userInfo: nil, repeats: true)
+    }
+    
+    //NSTimerIntervalで指定された秒数毎に呼び出されるメソッド.
+    func onUpdate(timer : NSTimer){
+        
+        cnt += 0.1
+        
+        //桁数を指定して文字列を作る.
+        let str = "Time:".stringByAppendingFormat("%.1f",cnt)
+        
+        myLabel.text = str
+
     /*
     // リスト出力
     for (_var) in gyroArray {

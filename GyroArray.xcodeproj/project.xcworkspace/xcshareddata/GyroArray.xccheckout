@@ -10,31 +10,31 @@
 	<string>GyroArray</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>47D7DC5DE8B559117185A93FBA2B83CC79065046</key>
-		<string>https://github.com/satansatoh/GyrotestApp.git</string>
+		<key>BB6E3C39EAB64EABC582A2A53790516C91C187EB</key>
+		<string>https://github.com/TDU-AWAKE/iOSAwake</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>GyroArray.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>47D7DC5DE8B559117185A93FBA2B83CC79065046</key>
+		<key>BB6E3C39EAB64EABC582A2A53790516C91C187EB</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/satansatoh/GyrotestApp.git</string>
+	<string>https://github.com/TDU-AWAKE/iOSAwake</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>47D7DC5DE8B559117185A93FBA2B83CC79065046</string>
+	<string>BB6E3C39EAB64EABC582A2A53790516C91C187EB</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>47D7DC5DE8B559117185A93FBA2B83CC79065046</string>
+			<string>BB6E3C39EAB64EABC582A2A53790516C91C187EB</string>
 			<key>IDESourceControlWCCName</key>
-			<string>GyroArray</string>
+			<string>iOSUi</string>
 		</dict>
 	</array>
 </dict>

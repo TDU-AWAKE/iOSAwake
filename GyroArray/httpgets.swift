@@ -16,26 +16,36 @@ class HTTPControl{
     var RequestMethod : String
     var request : NSMutableURLRequest
     var uuidNSStr : NSString
+    var twittername : AnyObject!
+    var Dataday : String?
     
     init(tryURL:String,ToRequestMethod:String){
         urlString = tryURL
         request = NSMutableURLRequest()
         RequestMethod = ToRequestMethod
         uuidNSStr = uuid.UUIDString
+        twittername = "@Twitter_name"
         addURL = ""
     }
     
-    func makeDataHTTP(userID:Int ,dataID : Int, data : Float){
-        var Amount = String(stringInterpolationSegment: data)
-        Amount = Amount.stringByReplacingOccurrencesOfString(".", withString: "_", options: nil, range: nil)
-        addURL = urlString + "/" + String(uuidNSStr) + "/" + String(dataID) + "/" + Amount
-        formatHTTP()
+    func UDTwitter(){
+        let ud = NSUserDefaults.standardUserDefaults()
+        twittername = ud.objectForKey("@Twittername")
+        println(twittername)
     }
     
+    func makeDataHTTP(data : Float){
+        var Amount = String(stringInterpolationSegment: data)
+        Amount = Amount.stringByReplacingOccurrencesOfString(".", withString: "_", options: nil, range: nil)
+        //(twittername as! String)
+        addURL = urlString + "/" + (twittername as! String) + "/" + String(uuidNSStr) + "/" + Amount
+        formatHTTP()
+    }
     
     func formatHTTP(){
         request = NSMutableURLRequest(URL: NSURL(string: addURL)!)
         request.HTTPMethod = RequestMethod
+        self.UDTwitter()
     }
     
     func HTTPCheck(){
@@ -48,5 +58,19 @@ class HTTPControl{
             }
         })
         task.resume()
+    }
+    
+    func GetDay(){
+        let dateFormatter = NSDateFormatter()// フォーマットの取得
+        dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")  // JPロケール
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"         // フォーマットの指定  HH:mm:ss
+        Dataday = dateFormatter.stringFromDate(NSDate())                // 現在日時
+    }
+    
+    func SaveUUID(){
+        let SavedUD = NSUserDefaults.standardUserDefaults()
+        SavedUD.setObject(uuidNSStr, forKey: "UUID")
+        SavedUD.setObject(Dataday, forKey: "GetDay")
+        println("セーブ完了")
     }
 }
